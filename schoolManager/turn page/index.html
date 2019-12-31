@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<style>
+		.wrapper{
+			width: 1000px;
+			height: 500px;
+			margin: 50px auto;
+			border: 2px solid #333;
+		}
+		.my-turn-page li{
+			list-style: none;
+			padding: 10px;
+			height: 10px;
+			border: 1px solid #eee;
+			display: inline-block;
+			margin: 0 5px;
+			cursor: pointer;
+		}
+		.my-turn-page li.active{
+			background-color: #345eee;
+		}
+		.page-size, .my-turn-page{
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="wrapper"></div>
+	<script src="../jquery-3.3.1.min.js"></script>
+	<script src="./turnPage.js"></script>
+	<script>
+		$('.wrapper').page({
+			allPageSize: 100,
+			pageSize: 15,
+			nowPage:1,
+			changePageCb: function({nowPage, pageSize}) {
+				console.log(123, nowPage, pageSize);
+			}
+		})
+	</script>
+</body>
+</html>
